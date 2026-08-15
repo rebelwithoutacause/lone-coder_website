@@ -115,6 +115,19 @@ a:hover{ color:var(--accent-hover); }
 .about-text p{ color:var(--text-dim); margin-bottom:1rem; max-width:60ch; }
 .about-text p:last-child{ margin-bottom:0; }
 
+.about-actions{ display:flex; flex-wrap:wrap; align-items:center; gap:1.4rem; margin-top:.6rem; }
+.about-actions .text-link{ margin-top:0; }
+.btn-cta{
+  display:inline-flex; align-items:center; gap:.4rem;
+  font-family:var(--font-mono); font-weight:700; font-size:.9rem;
+  color:var(--bg); background:var(--accent);
+  border:1px solid var(--accent);
+  border-radius:6px;
+  padding:.65rem 1.2rem;
+  transition:background .2s ease, border-color .2s ease, transform .2s ease;
+}
+.btn-cta:hover{ background:var(--accent-hover); border-color:var(--accent-hover); color:var(--bg); transform:translateY(-2px); }
+
 .status-row{ display:flex; flex-wrap:wrap; gap:.6rem; }
 .status-badge{
   display:inline-flex;
@@ -227,6 +240,7 @@ a:hover{ color:var(--accent-hover); }
   white-space:nowrap;
   padding-top:.2rem;
 }
+.portfolio-highlight{ font-family:var(--font-mono); font-weight:700; font-size:.78rem; color:var(--accent); margin-bottom:.6rem; }
 .portfolio-card p{ color:var(--text-dim); font-size:.9rem; margin-bottom:1rem; }
 .portfolio-link{ font-family:var(--font-mono); font-size:.85rem; }
 .portfolio-link.muted{ color:var(--text-dim); }
