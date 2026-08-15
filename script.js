@@ -52,6 +52,12 @@
       var honeypot = inquiryForm.querySelector('[name="_gotcha"]');
       if (honeypot && honeypot.value) return;
 
+      if (typeof grecaptcha !== 'undefined' && grecaptcha.getResponse().length === 0){
+        formStatus.textContent = 'Please confirm the reCAPTCHA before sending.';
+        formStatus.className = 'form-status error';
+        return;
+      }
+
       formStatus.textContent = 'Sending...';
       formStatus.className = 'form-status';
 
@@ -68,9 +74,11 @@
           formStatus.textContent = 'Something went wrong — please email me directly instead.';
           formStatus.className = 'form-status error';
         }
+        if (typeof grecaptcha !== 'undefined') grecaptcha.reset();
       }).catch(function(){
         formStatus.textContent = 'Something went wrong — please email me directly instead.';
         formStatus.className = 'form-status error';
+        if (typeof grecaptcha !== 'undefined') grecaptcha.reset();
       });
     });
   }

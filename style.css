@@ -309,4 +309,5 @@ a:hover{ color:var(--accent-hover); }
 @media (max-width:480px){
   .nav-cta{ font-size:.72rem; padding:.42rem .7rem; }
   .form-grid{ grid-template-columns:1fr; }
+  .g-recaptcha{ transform:scale(.87); transform-origin:left top; }
 }
