@@ -230,7 +230,12 @@
     }
   };
 
-  var FLAGS = { en: '🇬🇧', bg: '🇧🇬', ru: '🇷🇺', de: '🇩🇪' };
+  var FLAGS = {
+    en: '<svg viewBox="0 0 60 40"><rect width="60" height="40" fill="#00247d"/><path d="M0,0 60,40 M60,0 0,40" stroke="#fff" stroke-width="8"/><path d="M0,0 60,40 M60,0 0,40" stroke="#cf142b" stroke-width="4"/><path d="M30,0 30,40 M0,20 60,20" stroke="#fff" stroke-width="14"/><path d="M30,0 30,40 M0,20 60,20" stroke="#cf142b" stroke-width="8"/></svg>',
+    bg: '<svg viewBox="0 0 60 40"><rect width="60" height="13.33" y="0" fill="#fff"/><rect width="60" height="13.33" y="13.33" fill="#00966e"/><rect width="60" height="13.34" y="26.66" fill="#d62612"/></svg>',
+    ru: '<svg viewBox="0 0 60 40"><rect width="60" height="13.33" y="0" fill="#fff"/><rect width="60" height="13.33" y="13.33" fill="#0039a6"/><rect width="60" height="13.34" y="26.66" fill="#d52b1e"/></svg>',
+    de: '<svg viewBox="0 0 60 40"><rect width="60" height="13.33" y="0" fill="#000"/><rect width="60" height="13.33" y="13.33" fill="#dd0000"/><rect width="60" height="13.34" y="26.66" fill="#ffce00"/></svg>'
+  };
   var STORAGE_KEY = 'lc_lang';
   var current = localStorage.getItem(STORAGE_KEY) || 'en';
   if (!translations[current]) current = 'en';
@@ -254,7 +259,7 @@
 
     var flagEl = document.getElementById('langFlag');
     var codeEl = document.getElementById('langCode');
-    if (flagEl) flagEl.textContent = FLAGS[current];
+    if (flagEl) flagEl.innerHTML = FLAGS[current];
     if (codeEl) codeEl.textContent = current.toUpperCase();
 
     document.querySelectorAll('.lang-menu li').forEach(function(li){
