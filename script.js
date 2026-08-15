@@ -33,7 +33,8 @@
       if (navigator.clipboard && navigator.clipboard.writeText){
         navigator.clipboard.writeText(EMAIL).catch(function(){});
       }
-      emailReveal.textContent = EMAIL + ' (copied)';
+      var copiedLabel = (window.LC_I18N && window.LC_I18N.t('email_copied')) || '(copied)';
+      emailReveal.textContent = EMAIL + ' ' + copiedLabel;
       emailReveal.classList.add('visible');
       clearTimeout(hideTimer);
       hideTimer = setTimeout(function(){
@@ -49,16 +50,19 @@
     inquiryForm.addEventListener('submit', function(e){
       e.preventDefault();
 
+      var i18n = window.LC_I18N;
+      var tr = function(key, fallback){ return (i18n && i18n.t(key)) || fallback; };
+
       var honeypot = inquiryForm.querySelector('[name="_gotcha"]');
       if (honeypot && honeypot.value) return;
 
       if (typeof grecaptcha !== 'undefined' && grecaptcha.getResponse().length === 0){
-        formStatus.textContent = 'Please confirm the reCAPTCHA before sending.';
+        formStatus.textContent = tr('form_captcha_required', 'Please confirm the reCAPTCHA before sending.');
         formStatus.className = 'form-status error';
         return;
       }
 
-      formStatus.textContent = 'Sending...';
+      formStatus.textContent = tr('form_sending', 'Sending...');
       formStatus.className = 'form-status';
 
       fetch(inquiryForm.action, {
@@ -67,16 +71,16 @@
         headers: { 'Accept': 'application/json' }
       }).then(function(response){
         if (response.ok){
-          formStatus.textContent = "Thanks — your inquiry has been sent. I'll get back to you soon.";
+          formStatus.textContent = tr('form_success', "Thanks — your inquiry has been sent. I'll get back to you soon.");
           formStatus.className = 'form-status success';
           inquiryForm.reset();
         } else {
-          formStatus.textContent = 'Something went wrong — please email me directly instead.';
+          formStatus.textContent = tr('form_error', 'Something went wrong — please email me directly instead.');
           formStatus.className = 'form-status error';
         }
         if (typeof grecaptcha !== 'undefined') grecaptcha.reset();
       }).catch(function(){
-        formStatus.textContent = 'Something went wrong — please email me directly instead.';
+        formStatus.textContent = tr('form_error', 'Something went wrong — please email me directly instead.');
         formStatus.className = 'form-status error';
         if (typeof grecaptcha !== 'undefined') grecaptcha.reset();
       });
