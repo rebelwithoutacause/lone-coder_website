@@ -15,14 +15,17 @@
     <a href="#about" class="brand">
       &lt;Lone<span>Coder</span>/&gt;
     </a>
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-    <ul class="nav-menu" id="navMenu">
-      <li><a href="#about">About</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+    <div class="navbar-right">
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="btn-cta nav-cta">Start a Project &rarr;</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </nav>
 
@@ -45,10 +48,7 @@
           <h1>Lone Coder</h1>
           <p class="role-subtitle">Software Developer &amp; QA Specialist</p>
           <p>Lone Coder is an independent software developer and QA professional, working on project-based solutions for businesses and individuals. I build and test web applications, backend systems, and Chrome extensions, with a focus on quality, reliability, and user experience. I work directly with clients to understand their requirements and deliver custom software projects from concept to completion &mdash; requirements gathering, planning, execution, and ongoing maintenance, all handled end-to-end. Services include software development, manual &amp; automation testing, API testing, bug detection, test automation, and Docker-based deployment.</p>
-          <div class="about-actions">
-            <a href="#contact" class="btn-cta">Start a Project &rarr;</a>
-            <a href="https://rebelwithoutacause.github.io/QA_Portfolio/apps/certificates/" target="_blank" rel="noopener" class="text-link">View certificates &rarr;</a>
-          </div>
+          <a href="https://rebelwithoutacause.github.io/QA_Portfolio/apps/certificates/" target="_blank" rel="noopener" class="text-link">View certificates &rarr;</a>
         </div>
       </div>
 
@@ -119,7 +119,38 @@
 
   <section id="contact" class="section">
     <div class="container">
-      <p class="eyebrow">Contact</p>
+      <p class="eyebrow contact-eyebrow">Contact</p>
+      <h2 class="contact-heading">Tell me about your project</h2>
+
+      <form id="inquiryForm" class="contact-form" action="https://formspree.io/f/xljrwebg" method="POST">
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="firstName">First name</label>
+            <input type="text" id="firstName" name="firstName" autocomplete="given-name" required>
+          </div>
+          <div class="form-field">
+            <label for="lastName">Last name</label>
+            <input type="text" id="lastName" name="lastName" autocomplete="family-name" required>
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" autocomplete="email" required>
+        </div>
+        <div class="form-field">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" required>
+        </div>
+        <div class="form-field">
+          <label for="message">Project details</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <input type="text" name="_gotcha" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button type="submit" class="btn-cta">Send Inquiry &rarr;</button>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+      </form>
+
+      <p class="contact-divider">or reach out directly</p>
       <div class="contact-row">
         <a href="https://github.com/rebelwithoutacause" target="_blank" rel="noopener" class="icon-btn" aria-label="GitHub">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.75 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.11 3.05.74.8 1.18 1.83 1.18 3.09 0 4.43-2.69 5.41-5.25 5.69.41.36.78 1.07.78 2.16 0 1.56-.01 2.82-.01 3.2 0 .31.21.67.8.56A10.52 10.52 0 0 0 23.5 12c0-6.35-5.15-11.5-11.5-11.5z"/></svg>

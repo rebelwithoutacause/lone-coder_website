@@ -41,4 +41,37 @@
       }, 2500);
     });
   }
+
+  var inquiryForm = document.getElementById('inquiryForm');
+  var formStatus = document.getElementById('formStatus');
+
+  if (inquiryForm && formStatus){
+    inquiryForm.addEventListener('submit', function(e){
+      e.preventDefault();
+
+      var honeypot = inquiryForm.querySelector('[name="_gotcha"]');
+      if (honeypot && honeypot.value) return;
+
+      formStatus.textContent = 'Sending...';
+      formStatus.className = 'form-status';
+
+      fetch(inquiryForm.action, {
+        method: 'POST',
+        body: new FormData(inquiryForm),
+        headers: { 'Accept': 'application/json' }
+      }).then(function(response){
+        if (response.ok){
+          formStatus.textContent = "Thanks — your inquiry has been sent. I'll get back to you soon.";
+          formStatus.className = 'form-status success';
+          inquiryForm.reset();
+        } else {
+          formStatus.textContent = 'Something went wrong — please email me directly instead.';
+          formStatus.className = 'form-status error';
+        }
+      }).catch(function(){
+        formStatus.textContent = 'Something went wrong — please email me directly instead.';
+        formStatus.className = 'form-status error';
+      });
+    });
+  }
 })();
