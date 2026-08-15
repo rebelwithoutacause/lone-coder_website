@@ -150,10 +150,11 @@ a:hover{ color:var(--accent-hover); }
 
 /* ---------- services provided (keycap tags) ---------- */
 .key-block{ margin-top:2.5rem; }
+.key-block .eyebrow{ font-size:1rem; }
 .key-row{ display:flex; flex-wrap:wrap; gap:.6rem; }
 .key{
   font-family:var(--font-mono);
-  font-size:.82rem;
+  font-size:1rem;
   color:var(--text);
   background:var(--bg-card);
   border:1px solid var(--border-strong);
