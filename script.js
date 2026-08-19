@@ -25,7 +25,7 @@
 
   var emailBtn = document.getElementById('emailBtn');
   var emailReveal = document.getElementById('emailReveal');
-  var EMAIL = 'teodor.kostov.qa@gmail.com';
+  var EMAIL = 'lonecoder@nsh.one';
   var hideTimer;
 
   if (emailBtn && emailReveal){
