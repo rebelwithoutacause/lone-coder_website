@@ -186,7 +186,7 @@
       about_bio: 'Lone Coder ist ein unabhängiger Softwareentwickler und QA-Spezialist, der projektbezogene Lösungen für Unternehmen und Privatpersonen umsetzt. Ich entwickle und teste Webanwendungen, Backend-Systeme und Chrome-Erweiterungen mit Fokus auf Qualität, Zuverlässigkeit und Benutzerfreundlichkeit. Ich arbeite direkt mit Kunden zusammen, um ihre Anforderungen zu verstehen und individuelle Softwareprojekte von der Konzeption bis zur Fertigstellung zu liefern — Anforderungsanalyse, Planung, Umsetzung und laufende Wartung, alles aus einer Hand. Zu den Leistungen zählen Softwareentwicklung, manuelles & automatisiertes Testen, API-Tests, Fehlererkennung, Testautomatisierung und Docker-basiertes Deployment.',
       about_certs: 'Zertifikate ansehen',
       status_available: 'Verfügbar',
-      status_remote: 'Remote',
+      status_remote: 'Fernarbeit',
       status_pricing: 'Preis auf Anfrage',
       services_eyebrow: 'Angebotene Leistungen',
       service_testing: 'Manuelles & automatisiertes Testen',
