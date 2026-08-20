@@ -332,7 +332,11 @@ a:hover{ color:var(--accent-hover); }
   .navbar-right{ gap:.9rem; }
   .nav-cta{ display:none; }
   .nav-menu-cta{ display:block; padding:.4rem 1.5rem .9rem; }
-  .nav-menu-cta .btn-cta{ width:100%; justify-content:center; }
+  .nav-menu-cta .btn-cta{
+    display:inline-flex; width:100%; justify-content:center;
+    padding:.65rem 1.2rem; font-size:.9rem; color:var(--bg);
+  }
+  .nav-menu-cta .btn-cta:hover{ color:var(--bg); }
 }
 
 @media (max-width:700px){
