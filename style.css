@@ -343,6 +343,8 @@ a:hover{ color:var(--accent-hover); }
   .about-top{ padding-top:5.5rem; }
   .about-grid{ grid-template-columns:1fr; }
   .about-avatar{ width:260px; height:260px; }
+  .about-text{ order:1; }
+  .about-avatar-col{ order:2; }
 }
 
 @media (max-width:480px){
