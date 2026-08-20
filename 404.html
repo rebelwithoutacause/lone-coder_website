@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Page Not Found | Lone Coder</title>
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="stylesheet" href="style.css">
+<style>
+  .error-page{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:2rem 1.5rem;
+  }
+  .error-code{
+    font-family:var(--font-mono);
+    font-weight:700;
+    font-size:clamp(3.5rem,12vw,6rem);
+    color:var(--accent);
+    line-height:1;
+    margin-bottom:1rem;
+  }
+  .error-message{
+    color:var(--text-dim);
+    max-width:40ch;
+    margin-bottom:2rem;
+  }
+</style>
+</head>
+<body>
+
+<main class="error-page">
+  <p class="error-code">404</p>
+  <h1>Page not found</h1>
+  <p class="error-message">The page you're looking for doesn't exist or has been moved.</p>
+  <a href="/" class="btn-cta">Back to home &rarr;</a>
+</main>
+
+</body>
+</html>
