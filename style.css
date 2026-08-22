@@ -355,5 +355,4 @@ a:hover{ color:var(--accent-hover); }
   .navbar-right{ gap:.5rem; }
   .lang-btn{ padding:.4rem .5rem; }
   #langCode{ display:none; }
-  .lang-menu{ right:auto; left:0; }
 }
