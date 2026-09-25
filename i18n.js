@@ -281,6 +281,16 @@
     document.querySelectorAll('.lang-menu li').forEach(function(li){
       li.classList.toggle('active', li.getAttribute('data-lang') === current);
     });
+
+    syncRecaptchaLang();
+  }
+
+  function syncRecaptchaLang(){
+    var frame = document.querySelector('.g-recaptcha iframe');
+    if (!frame) return;
+    var src = frame.getAttribute('src') || '';
+    var updated = src.replace(/([?&]hl=)[^&]*/, '$1' + current);
+    if (updated !== src) frame.setAttribute('src', updated);
   }
 
   function setLang(lang){
@@ -297,6 +307,12 @@
   };
 
   applyTranslations();
+
+  var recaptchaScript = document.createElement('script');
+  recaptchaScript.src = 'https://www.google.com/recaptcha/api.js?hl=' + current;
+  recaptchaScript.async = true;
+  recaptchaScript.defer = true;
+  document.body.appendChild(recaptchaScript);
 
   var langBtn = document.getElementById('langBtn');
   var langMenu = document.getElementById('langMenu');
